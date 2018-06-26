@@ -2,9 +2,11 @@
   <div>
     <ol>
       <li v-for="(item, index) in items" :key=index>
-        <a v-bind:href="item.path">
+        <!-- <a v-bind:href="item.path">
           {{ item.title }}
-        </a>
+        </a> -->
+
+        <router-link v-bind:to=item.path>  {{ item.title }} </router-link>
         <!-- {{item.title}}
         v-on:click="load(item.path)" -->
       </li>
@@ -18,10 +20,10 @@ export default {
   data () {
     return {
       items: [
-        { title: 'top', path: '#/' },
-        { title: 'profile', path: '#/profile' },
-        { title: 'skills', path: '#/skills' },
-        { title: 'outputs', path: '#/outputs' }
+        { title: 'top', path: '/' },
+        { title: 'profile', path: '/profile' },
+        { title: 'skills', path: '/skills' },
+        { title: 'outputs', path: '/outputs' }
       ]
     }
   },
