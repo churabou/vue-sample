@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <tab-menu></tab-menu>
     <router-view/>
   </div>
 </template>
 
 <script>
+
+import TabMenu from '@/components/TabMenu'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    TabMenu
+  }
 }
 </script>
 
