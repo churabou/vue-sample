@@ -2,13 +2,9 @@
   <div>
     <ol>
       <li v-for="(item, index) in items" :key=index>
-        <!-- <a v-bind:href="item.path">
-          {{ item.title }}
-        </a> -->
-
-        <router-link v-bind:to=item.path>  {{ item.title }} </router-link>
-        <!-- {{item.title}}
-        v-on:click="load(item.path)" -->
+         <router-link v-bind:to=item.path>
+            {{ item.title }}
+         </router-link>
       </li>
     </ol>
   </div>
@@ -25,12 +21,6 @@ export default {
         { title: 'skills', path: '/skills' },
         { title: 'outputs', path: '/outputs' }
       ]
-    }
-  },
-  methods: {
-    load: function (path) {
-      // window.load()
-      window.location.href = path
     }
   }
 }
@@ -62,6 +52,7 @@ li:hover {
   opacity: 0.4;
 }
 
+/*  router-linkがaタグとして表示されてたのでスタイルをaタグに書いた*/
 a {
   position: absolute;
   left: 0;

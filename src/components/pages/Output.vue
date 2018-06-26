@@ -1,7 +1,9 @@
 <template>
   <div class="output">
-    <h1>{{ msg }}</h1>
-    <p> {{text}}</p>
+    <div class="content" v-for="i in 6" :key=i>
+    <h3> {{ name }} </h3>
+    <p> {{ text }} </p>
+  </div>
   </div>
 </template>
 
@@ -10,8 +12,8 @@ export default {
   name: 'Output',
   data () {
     return {
-      msg: 'これは#/outputに表示されます',
-      text: 'カメラアプリをリリースしました。 '.repeat(10)
+      name: 'カメラアプリを作成した',
+      text: 'このような意図で作成しました。ここをこのように工夫しました。ここが難しかったです。今後はこうゆう機能を追加したいです。'.repeat(3)
     }
   }
 }
@@ -20,18 +22,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-div {
-  background-color: lime;
-  height: 500px;
+div.output {
+  text-align: center;
 }
 
-h1 {
+div.content {
+  background-color: #eee;
+  display: inline-block;
+  margin: 10px;
+  width: 30%;
+}
+
+h3 {
   color: white;
 }
 
 p {
-  width: 60%;
+  width: 90%;
   display: inline-block;
+  text-align: left;
 }
 
 </style>
